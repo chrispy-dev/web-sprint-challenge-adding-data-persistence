@@ -8,10 +8,10 @@ This is an individual assessment. All work must be your own. Your challenge scor
 
 ## Project Set Up
 
-- [ ] Create a forked copy of this project.
-- [ ] Clone your OWN version of the repository. (Not Lambda's by mistake!)
-- [ ] Implement the project in a new branch: `git checkout -b <firstName-lastName>`.
-- [ ] Create and push commits regularly: `git push origin <firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Clone your OWN version of the repository. (Not Lambda's by mistake!)
+- [x] Implement the project in a new branch: `git checkout -b <firstName-lastName>`.
+- [x] Create and push commits regularly: `git push origin <firstName-lastName>`.
 
 ## Project Instructions
 
@@ -25,24 +25,24 @@ Use appropriate data types and constraints:
 
 A **project** is what needs to be done and is stored in a `projects` table with the following columns:
 
-- [ ] `project_id` - primary key
-- [ ] `project_name` - required
-- [ ] `project_description` - optional
-- [ ] `project_completed` - required but the database defaults it to not completed if not provided
+- [x] `project_id` - primary key
+- [x] `project_name` - required
+- [x] `project_description` - optional
+- [x] `project_completed` - required but the database defaults it to not completed if not provided
 
 A **resource** is anything needed to complete a project and is stored in a `resources` table with the following columns:
 
-- [ ] `resource_id` - primary key
-- [ ] `resource_name` - required and unique
-- [ ] `resource_description` - optional
+- [x] `resource_id` - primary key
+- [x] `resource_name` - required and unique
+- [x] `resource_description` - optional
 
 A **task** is one of the steps needed to complete a project and is stored in a `tasks` table with the following columns:
 
-- [ ] `task_id` - primary key
-- [ ] `task_description` - required
-- [ ] `task_notes` - optional
-- [ ] `task_completed` - required but the database defaults it to not completed if not provided
-- [ ] `project_id` - required and points to an actual `project_id` in the `projects` table
+- [x] `task_id` - primary key
+- [x] `task_description` - required
+- [x] `task_notes` - optional
+- [x] `task_completed` - required but the database defaults it to not completed if not provided
+- [x] `project_id` - required and points to an actual `project_id` in the `projects` table
 
 A **resource assignment** connects a resource and a project, and is stored in a `project_resources` table. You decide what columns to use.
 
@@ -50,28 +50,28 @@ A **resource assignment** connects a resource and a project, and is stored in a 
 
 Your finished project must meet all of the following requirements:
 
-- [ ] Design the data model and use knex migrations to create the database and tables.
-- [ ] Build an API inside the `api` folder with endpoints for:
+- [x] Design the data model and use knex migrations to create the database and tables.
+- [x] Build an API inside the `api` folder with endpoints for:
 
-  - [ ] `[POST] /api/resources`
+  - [x] `[POST] /api/resources`
     - Example of response body: `{"resource_id":1,"resource_name":"foo","resource_description":null}`
 
-  - [ ] `[GET] /api/resources`
+  - [x] `[GET] /api/resources`
     - Example of response body: `[{"resource_id":1,"resource_name":"foo","resource_description":null}]`
 
-  - [ ] `[POST] /api/projects`
+  - [x] `[POST] /api/projects`
     - Even though `project_completed` is stored as an integer, the API uses booleans when interacting with the client
     - Example of response body: `{"project_id":1,"project_name":"bar","project_description":null,"project_completed":false}`
 
-  - [ ] `[GET] /api/projects`
+  - [x] `[GET] /api/projects`
     - Even though `project_completed` is stored as an integer, the API uses booleans when interacting with the client
     - Example of response body: `[{"project_id":1,"project_name":"bar","project_description":null,"project_completed":false}]`
 
-  - [ ] `[POST] /api/tasks`
+  - [x] `[POST] /api/tasks`
     - Even though `task_completed` is stored as an integer, the API uses booleans when interacting with the client
     - Example of response body: `{"task_id":1,"task_description":"baz","task_notes":null,"task_completed":false,"project_id:1}`
 
-  - [ ] `[GET] /api/tasks`
+  - [x] `[GET] /api/tasks`
     - Even though `task_completed` is stored as an integer, the API uses booleans when interacting with the client
     - Each task must include `project_name` and `project_description`
     - Example of response body: `[{"task_id":1,"task_description":"baz","task_notes":null,"task_completed":false,"project_name:"bar","project_description":null}]`
